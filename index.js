@@ -9,10 +9,13 @@ canvas.addEventListener("click",(e)=>{
     let div = document.createElement("div");
     div.width = window.innerWidth;
     div.height = window.innerHeight;
-    div.appendChild(document.createTextNode(context.fillRect(e.clientX,e.clientY,100,100)));
+    let a = context.fillRect(e.clientX,e.clientY,100,100)
+    console.log(a);
+    div.appendChild(document.createTextNode(a));
     canvas.appendChild(div);
-    xAxis = xAxis+50;
-    yAxis = yAxis+50;
+      setTimeout(() => {
+       context.clearRect(e.clientX,e.clientY,100,100);
+      }, 3000);
 
 })
 
